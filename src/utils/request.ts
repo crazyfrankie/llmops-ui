@@ -82,7 +82,7 @@ const baseFetch = <T>(url: string, fetchOptions: FetchOptionType): Promise<T> =>
         .then(async (res) => {
           const json = await res.json()
           // 支持多种成功状态码格式
-          if (json.code === httpCode.success || json.code === 20000) {
+          if (json.code === httpCode.success) {
             // 如果需要包含响应头部信息（用于登录等场景获取access_token）
             if (fetchOptions.includeHeaders) {
               const headers: Record<string, string> = {}
@@ -99,6 +99,11 @@ const baseFetch = <T>(url: string, fetchOptions: FetchOptionType): Promise<T> =>
             }
           } else if (json.code === httpCode.unauthorized) {
             clearCredential()
+            await router.replace({ name: 'auth-login' })
+          } else if (json.code === httpCode.unauthorized) {
+            // 登录过期，清除凭证并强制跳转到登录页面
+            clearCredential()
+            Message.error('登录已过期，请重新登录')
             await router.replace({ name: 'auth-login' })
           } else if (json.code === httpCode.notFound) {
             await router.push({ name: 'errors-not-found' })

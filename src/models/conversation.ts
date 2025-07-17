@@ -2,7 +2,7 @@ import { type BasePaginatorRequest, type BasePaginatorResponse } from '@/models/
 
 // 获取指定会话消息列表请求结构
 export type GetConversationMessagesWithPageRequest = BasePaginatorRequest & {
-  created_at: number
+  ctime: number
 }
 
 // 获取指定会话消息列表响应结构
@@ -23,7 +23,7 @@ export type GetConversationMessagesWithPageResponse = BasePaginatorResponse<{
     tool: string
     tool_input: Record<string, any>
     latency: number
-    created_at: number
+    ctime: number
   }[]
-  created_at: number
+  ctime: number
 }>

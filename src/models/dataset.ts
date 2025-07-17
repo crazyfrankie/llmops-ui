@@ -9,8 +9,8 @@ export type GetDatasetsWithPageResponse = BasePaginatorResponse<{
   document_count: number
   character_count: number
   related_app_count: number
-  updated_at: number
-  created_at: number
+  utime: number
+  ctime: number
 }>
 
 // 新增知识库请求结构

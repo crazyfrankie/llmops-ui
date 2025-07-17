@@ -9,8 +9,8 @@ export type GetWechatConfigResponse = BaseResponse<{
   wechat_app_secret: string
   wechat_app_token: string
   status: string
-  updated_at: number
-  created_at: number
+  utime: number
+  ctime: number
 }>
 
 // 更新微信配置请求结构

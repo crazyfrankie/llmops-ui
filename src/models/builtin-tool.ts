@@ -14,7 +14,7 @@ export type GetBuiltinToolsResponse = BaseResponse<
   Array<{
     background: string
     category: string
-    created_at: number
+    ctime: number
     description: string
     label: string
     name: string
@@ -50,5 +50,5 @@ export type GetBuiltinToolResponse = BaseResponse<{
     required: boolean
     description: string
   }[]
-  created_at: number
+  ctime: number
 }>

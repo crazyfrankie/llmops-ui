@@ -20,6 +20,6 @@ export type GetBuiltinAppsResponse = BaseResponse<
       provider: string
       model: string
     }
-    created_at: number
+    ctime: number
   }[]
 >

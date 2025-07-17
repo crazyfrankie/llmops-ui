@@ -3,12 +3,12 @@ export const apiPrefix: string = import.meta.env.VITE_API_PREFIX
 
 // 业务状态码
 export const httpCode = {
-  success: 'success',
-  fail: 'fail',
-  notFound: 'not_found',
-  unauthorized: 'unauthorized',
-  forbidden: 'forbidden',
-  validateError: 'validate_error',
+  success: 20000,
+  unauthorized: 40001,
+  validateError: 40002,
+  forbidden: 40003,
+  notFound: 40004,
+  fail: 50000,
 }
 
 // 类型字符串与中文映射

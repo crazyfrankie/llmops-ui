@@ -3,10 +3,10 @@ import type { GetLanguageModelResponse, GetLanguageModelsResponse } from '@/mode
 
 // 获取所有语言模型列表信息
 export const getLanguageModels = () => {
-  return get<GetLanguageModelsResponse>(`/language-models`)
+  return get<GetLanguageModelsResponse>(`/llms`)
 }
 
 // 获取指定模型的详细信息
 export const getLanguageModel = (provider_name: string, model_name: string) => {
-  return get<GetLanguageModelResponse>(`/language-models/${provider_name}/${model_name}`)
+  return get<GetLanguageModelResponse>(`/llms/${provider_name}/${model_name}`)
 }

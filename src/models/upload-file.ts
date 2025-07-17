@@ -14,5 +14,5 @@ export type UploadFileResponse = BaseResponse<{
   size: number
   extension: string
   mime_type: string
-  created_at: number
+  ctime: number
 }>

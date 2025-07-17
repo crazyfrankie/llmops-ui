@@ -42,7 +42,7 @@ export const useGetConversationMessagesWithPage = () => {
       const resp = await getConversationMessages(conversation_id, {
         current_page: paginator.value.current_page,
         page_size: paginator.value.page_size,
-        created_at: created_at.value,
+        ctime: created_at.value,
       })
       const data = resp.data
 
@@ -59,7 +59,7 @@ export const useGetConversationMessagesWithPage = () => {
         messages.value = data.list
       } else {
         messages.value.push(...data.list)
-        created_at.value = data.list[0]?.created_at ?? 0
+        created_at.value = data.list[0]?.ctime ?? 0
       }
     } finally {
       loading.value = false

@@ -8,5 +8,5 @@ export type GetCurrentUserResponse = BaseResponse<{
   avatar: string
   last_login_ip: string
   last_login_at: number
-  created_at: number
+  ctime: number
 }>

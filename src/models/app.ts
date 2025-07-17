@@ -8,9 +8,9 @@ export type GetAppResponse = BaseResponse<{
   icon: string
   description: string
   status: string
-  draft_updated_at: number
-  updated_at: number
-  created_at: number
+  draft_utim: number
+  utim: number
+  ctime: number
 }>
 
 // 新增应用请求结构
@@ -34,8 +34,8 @@ export type GetAppsWithPageResponse = BasePaginatorResponse<{
     model: string
   }
   status: string
-  updated_at: number
-  created_at: number
+  utim: number
+  ctime: number
 }>
 
 // 获取特定应用的草稿配置响应结构
@@ -70,8 +70,8 @@ export type GetDraftAppConfigResponse = BaseResponse<{
     inputs_config: { enable: boolean; preset_response: string }
     outputs_config: { enable: boolean }
   }
-  updated_at: number
-  created_at: number
+  utim: number
+  ctime: number
 }>
 
 // 更新特定应用的草稿配置请求结构
@@ -115,21 +115,21 @@ export type GetDebugConversationMessagesWithPageResponse = BasePaginatorResponse
     tool: string
     tool_input: Record<string, any>
     latency: number
-    created_at: number
+    ctime: number
   }[]
-  created_at: number
+  ctime: number
 }>
 
 // 获取应用的发布历史配置列表分页响应结构
 export type GetPublishHistoriesWithPageResponse = BasePaginatorResponse<{
   id: string
   version: number
-  created_at: number
+  ctime: number
 }>
 
 // 获取应用的调试会话消息列表请求结构
 export type GetDebugConversationMessagesWithPageRequest = BasePaginatorRequest & {
-  created_at?: number
+  ctime?: number
 }
 
 // 获取应用发布配置响应结构

@@ -21,8 +21,8 @@ export type GetWorkflowsWithPageResponse = BasePaginatorResponse<{
   is_debug_passed: boolean
   node_count: number
   published_at: number
-  updated_at: number
-  created_at: number
+  utime: number
+  ctime: number
 }>
 
 // 新增工作流请求
@@ -52,8 +52,8 @@ export type GetWorkflowResponse = BaseResponse<{
   is_debug_passed: boolean
   node_count: number
   published_at: number
-  updated_at: number
-  created_at: number
+  utime: number
+  ctime: number
 }>
 
 // 获取指定工作流图草稿配置

@@ -2,7 +2,7 @@ import type { BasePaginatorRequest, BasePaginatorResponse } from '@/models/base'
 
 // 获取辅助Agent会话消息分页列表请求结构
 export type GetAssistantAgentMessagesWithPageRequest = BasePaginatorRequest & {
-  created_at?: number
+  ctime?: number
 }
 
 // 获取辅助Agent会话消息分页列表响应结构
@@ -23,7 +23,7 @@ export type GetAssistantAgentMessagesWithPageResponse = BasePaginatorResponse<{
     tool: string
     tool_input: Record<string, any>
     latency: number
-    created_at: number
+    ctime: number
   }[]
-  created_at: number
+  ctime: number
 }>

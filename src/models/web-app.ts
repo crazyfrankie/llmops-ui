@@ -24,7 +24,7 @@ export type GetWebAppConversationsResponse = BaseResponse<
     id: string
     name: string
     summary: string
-    created_at: number
+    ctime: number
   }[]
 >
 

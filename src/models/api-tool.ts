@@ -8,7 +8,7 @@ export type GetApiToolProvidersWithPageResponse = BasePaginatorResponse<{
   description: string
   headers: Array<any>
   tools: Array<any>
-  created_at: number
+  ctime: number
 }>
 
 // 新增自定义API插件提供者请求结构
@@ -34,7 +34,7 @@ export type GetApiToolProviderResponse = BaseResponse<{
   icon: string
   openapi_schema: string
   headers: Array<any>
-  created_at: number
+  ctime: number
 }>
 
 // 获取自定义API工具详情
