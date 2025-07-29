@@ -1,4 +1,4 @@
-import { get, post } from '@/utils/request'
+import { del, get, post, put } from '@/utils/request'
 import {
   type CreateDatasetRequest,
   type CreateDocumentsRequest,
@@ -41,14 +41,14 @@ export const createDataset = (req: CreateDatasetRequest) => {
 
 // 更新知识库
 export const updateDataset = (dataset_id: string, req: UpdateDatasetRequest) => {
-  return post<BaseResponse<any>>(`/datasets/${dataset_id}`, {
+  return put<BaseResponse<any>>(`/datasets/${dataset_id}`, {
     body: req,
   })
 }
 
 // 删除知识库请求
 export const deleteDataset = (dataset_id: string) => {
-  return post<BaseResponse<any>>(`/datasets/${dataset_id}/delete`)
+  return del<BaseResponse<any>>(`/datasets/${dataset_id}`)
 }
 
 // 获取知识库详情
@@ -81,19 +81,19 @@ export const updateDocumentEnabled = (
   document_id: string,
   enabled: boolean,
 ) => {
-  return post<BaseResponse<any>>(`/datasets/${dataset_id}/documents/${document_id}/enabled`, {
+  return put<BaseResponse<any>>(`/datasets/${dataset_id}/documents/${document_id}/enabled`, {
     body: { enabled },
   })
 }
 
 // 删除指定文档信息
 export const deleteDocument = (dataset_id: string, document_id: string) => {
-  return post<BaseResponse<any>>(`/datasets/${dataset_id}/documents/${document_id}/delete`)
+  return del<BaseResponse<any>>(`/datasets/${dataset_id}/documents/${document_id}`)
 }
 
 // 更新文档的名字
 export const updateDocumentName = (dataset_id: string, document_id: string, name: string) => {
-  return post<BaseResponse<any>>(`/datasets/${dataset_id}/documents/${document_id}/name`, {
+  return put<BaseResponse<any>>(`/datasets/${dataset_id}/documents/${document_id}/name`, {
     body: { name },
   })
 }
@@ -149,8 +149,8 @@ export const createSegment = (
 
 // 删除指定文档片段信息
 export const deleteSegment = (dataset_id: string, document_id: string, segment_id: string) => {
-  return post<BaseResponse<any>>(
-    `/datasets/${dataset_id}/documents/${document_id}/segments/${segment_id}/delete`,
+  return del<BaseResponse<any>>(
+    `/datasets/${dataset_id}/documents/${document_id}/segments/${segment_id}`,
   )
 }
 
@@ -161,7 +161,7 @@ export const updateSegment = (
   segment_id: string,
   req: UpdateSegmentRequest,
 ) => {
-  return post<BaseResponse<any>>(
+  return put<BaseResponse<any>>(
     `/datasets/${dataset_id}/documents/${document_id}/segments/${segment_id}`,
     { body: req },
   )
@@ -174,7 +174,7 @@ export const updateSegmentEnabled = (
   segment_id: string,
   enabled: boolean,
 ) => {
-  return post<BaseResponse<any>>(
+  return put<BaseResponse<any>>(
     `/datasets/${dataset_id}/documents/${document_id}/segments/${segment_id}/enabled`,
     { body: { enabled } },
   )

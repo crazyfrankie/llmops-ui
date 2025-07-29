@@ -1,4 +1,4 @@
-import { get, post } from '@/utils/request'
+import { get, post, put } from '@/utils/request'
 import type { GetWechatConfigResponse, UpdateWechatConfigRequest } from '@/models/platform'
 import type { BaseResponse } from '@/models/base'
 
@@ -10,5 +10,5 @@ export const getWechatConfig = (app_id: string) => {
 
 // 更新指定 Agent 的微信公众号发布配置
 export const updateWechatConfig = (app_id: string, req: UpdateWechatConfigRequest) => {
-  return post<BaseResponse<any>>(`/platform/${app_id}/wechat-config`, { body: req })
+  return put<BaseResponse<any>>(`/platform/${app_id}/wechat-config`, { body: req })
 }

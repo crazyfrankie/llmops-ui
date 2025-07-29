@@ -109,7 +109,7 @@ onMounted(() => {
               </a-avatar>
               <div class="text-xs text-gray-400">
                 慕课 · 发布时间
-                {{ moment(builtinTool.created_at * 1000).format('MM-DD HH:mm') }}
+                {{ moment(builtinTool.ctime * 1000).format('MM-DD HH:mm') }}
               </div>
             </div>
           </a-card>
