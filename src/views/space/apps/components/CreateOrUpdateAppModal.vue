@@ -32,14 +32,21 @@ const saveApp = async ({ errors }: { errors: Record<string, ValidatedError> | un
   // 3.1 判断表单是否出错
   if (errors) return
 
-  // 3.2 检测是保存还是新增，调用不同的API接口
-  if (props.app_id) {
-    await handleUpdateApp(props.app_id, form.value)
-  } else {
-    await handleCreateApp(form.value)
+  // 3.2 构建API请求数据，只包含需要的字段
+  const requestData = {
+    name: form.value.name,
+    icon: form.value.icon,
+    description: form.value.description,
   }
 
-  // 3.3 完成保存操作，隐藏模态窗并调用回调函数
+  // 3.3 检测是保存还是新增，调用不同的API接口
+  if (props.app_id) {
+    await handleUpdateApp(props.app_id, requestData)
+  } else {
+    await handleCreateApp(requestData)
+  }
+
+  // 3.4 完成保存操作，隐藏模态窗并调用回调函数
   emits('update:visible', false)
   props.callback && props.callback()
 }
@@ -119,9 +126,9 @@ watch(
                 // 2.使用普通异步函数完成上传
                 const uploadTask = async () => {
                   try {
-                    await handleUploadImage(fileItem.file as File)
-                    form.icon = image_url
-                    onSuccess(image_url)
+                    const uploadedImageUrl = await handleUploadImage(fileItem.file as File)
+                    form.icon = uploadedImageUrl  // 直接使用返回的URL
+                    onSuccess(uploadedImageUrl)
                   } catch (error) {
                     onError(error)
                   }

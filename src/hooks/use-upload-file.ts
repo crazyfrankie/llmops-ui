@@ -12,6 +12,7 @@ export const useUploadImage = () => {
       loading.value = true
       const resp = await uploadImage(image)
       image_url.value = resp.data.image_url
+      return resp.data.image_url  // 返回上传后的URL
     } finally {
       loading.value = false
     }
