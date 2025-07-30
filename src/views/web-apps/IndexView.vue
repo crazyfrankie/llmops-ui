@@ -169,7 +169,7 @@ const addConversation = () => {
       id: '',
       name: 'New Conversation',
       summary: '',
-      created_at: 0,
+      ctime: 0,
     }
   }
 }
@@ -220,7 +220,7 @@ const handleSubmit = async () => {
     total_token_count: 0,
     latency: 0,
     agent_thoughts: [],
-    created_at: 0,
+    ctime: 0,
   })
 
   // 11.5 初始化推理过程数据，并清空输入数据
@@ -271,7 +271,7 @@ const handleSubmit = async () => {
             tool: data?.tool,
             tool_input: data?.tool_input,
             latency: data?.latency,
-            created_at: 0,
+            ctime: 0,
           })
         } else {
           // 5.13 存在数据则叠加
@@ -304,7 +304,7 @@ const handleSubmit = async () => {
           tool: data?.tool,
           tool_input: data?.tool_input,
           latency: data?.latency,
-          created_at: 0,
+          ctime: 0,
         })
       }
 
@@ -323,7 +323,7 @@ const handleSubmit = async () => {
         id: messages.value[0].conversation_id,
         name: 'New Conversation',
         summary: '',
-        created_at: messages.value[0].created_at,
+        ctime: messages.value[0].ctime,
       })
       // 11.15 清空newConversation并修改选中
       newConversation.value = null

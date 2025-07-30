@@ -184,14 +184,14 @@ watch(
                   </a-table-column>
                   <a-table-column
                       title="时间"
-                      data-index="created_at"
+                      data-index="ctime"
                       header-cell-class="text-gray-500 bg-transparent border-b font-bold"
                       cell-class="text-gray-500"
                       :width="160"
                   >
                     <template #cell="{ record }">
                       <div class="">
-                        {{ moment(record.created_at * 1000).format('YYYY-MM-DD HH:mm') }}
+                        {{ moment(record.ctime * 1000).format('YYYY-MM-DD HH:mm') }}
                       </div>
                     </template>
                   </a-table-column>

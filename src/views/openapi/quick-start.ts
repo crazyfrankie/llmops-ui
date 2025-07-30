@@ -14,7 +14,7 @@ export const blockApiOutput = `{
     "data": {
         "agent_thoughts": [
             {
-                "created_at": 0,
+                "ctime": 0,
                 "event": "long_term_memory_recall",
                 "id": "bb3af322-ee05-4914-b678-f9ab0c1100f2",
                 "latency": 0,
@@ -24,7 +24,7 @@ export const blockApiOutput = `{
                 "tool_input": {}
             },
             {
-                "created_at": 0,
+                "ctime": 0,
                 "event": "agent_thought",
                 "id": "3772f55f-f74d-4226-ac6b-262f12e638b3",
                 "latency": 10.352535700018052,
@@ -34,7 +34,7 @@ export const blockApiOutput = `{
                 "tool_input": {}
             },
             {
-                "created_at": 0,
+                "ctime": 0,
                 "event": "agent_action",
                 "id": "8ccda267-b8b9-407a-b331-e53e13413777",
                 "latency": 1.2946343999938108,
@@ -46,7 +46,7 @@ export const blockApiOutput = `{
                 }
             },
             {
-                "created_at": 0,
+                "ctime": 0,
                 "event": "agent_message",
                 "id": "2838d7e4-a368-4340-88d4-009245d895a1",
                 "latency": 4.272923699987587,
@@ -56,7 +56,7 @@ export const blockApiOutput = `{
                 "tool_input": {}
             },
             {
-                "created_at": 0,
+                "ctime": 0,
                 "event": "agent_end",
                 "id": "1b963062-8623-4e6e-a65e-16249d1c1ee8",
                 "latency": 0,

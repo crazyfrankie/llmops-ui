@@ -50,7 +50,7 @@ export const useGetAssistantAgentMessagesWithPage = () => {
   // 1.定义hooks所需数据
   const loading = ref(false)
   const messages = ref<GetAssistantAgentMessagesWithPageResponse['data']['list']>([])
-  const created_at = ref(0)
+  const ctime = ref(0)
   const defaultPaginator = {
     current_page: 1,
     page_size: 5,
@@ -64,7 +64,7 @@ export const useGetAssistantAgentMessagesWithPage = () => {
     // 2.1 判断是否是初始化，如果是则先初始化分页器
     if (init) {
       paginator.value = { ...defaultPaginator }
-      created_at.value = 0
+      ctime.value = 0
     } else if (paginator.value.current_page > paginator.value.total_page) {
       return
     }
@@ -75,7 +75,7 @@ export const useGetAssistantAgentMessagesWithPage = () => {
       const resp = await getAssistantAgentMessagesWithPage({
         current_page: paginator.value.current_page,
         page_size: paginator.value.page_size,
-        ctime: created_at.value,
+        ctime: ctime.value,
       })
       const data = resp.data
 
@@ -92,7 +92,7 @@ export const useGetAssistantAgentMessagesWithPage = () => {
         messages.value = data.list
       } else {
         messages.value.push(...data.list)
-        created_at.value = data.list[0]?.ctime ?? 0
+        ctime.value = data.list[0]?.ctime ?? 0
       }
     } finally {
       loading.value = false

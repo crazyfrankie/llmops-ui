@@ -37,8 +37,8 @@ export type GetDatasetResponse = BaseResponse<{
   hit_count: number
   related_app_count: number
   character_count: number
-  updated_at: number
-  created_at: number
+  ctime: number
+  ctime: number
 }>
 
 // 获取指定的知识库文档列表分页请求结构
@@ -59,8 +59,8 @@ export type GetDocumentsWithPageResponse = BasePaginatorResponse<{
   disabled_at: number
   status: string
   error: string
-  updated_at: number
-  created_at: number
+  ctime: number
+  ctime: number
 }>
 
 // 获取指定文档详情响应结构
@@ -76,8 +76,8 @@ export type GetDocumentResponse = BaseResponse<{
   disabled_at: number
   status: string
   error: string
-  updated_at: number
-  created_at: number
+  ctime: number
+  ctime: number
 }>
 
 // 知识库召回测试请求结构
@@ -109,8 +109,8 @@ export type HitResponse = BaseResponse<
     disabled_at: number
     status: string
     error: string
-    updated_at: number
-    created_at: number
+    ctime: number
+    ctime: number
   }>
 >
 
@@ -121,7 +121,7 @@ export type GetDatasetQueriesResponse = BaseResponse<
     query: string
     source: string
     dataset_id: string
-    created_at: number
+    ctime: number
   }>
 >
 
@@ -149,7 +149,7 @@ export type CreateDocumentsResponse = BaseResponse<{
     id: string
     name: string
     status: string
-    created_at: number
+    ctime: number
   }[]
 }>
 
@@ -172,7 +172,7 @@ export type GetDocumentsStatusResponse = BaseResponse<
     indexing_completed_at: number
     completed_at: number
     stopped_at: number
-    created_at: number
+    ctime: number
   }>
 >
 
@@ -198,8 +198,8 @@ export type GetSegmentsWithPageResponse = BasePaginatorResponse<{
   disabled_at: number
   status: string
   error: string
-  updated_at: number
-  created_at: number
+  ctime: number
+  ctime: number
 }>
 
 // 新增文档片段请求结构
@@ -229,6 +229,6 @@ export type GetSegmentResponse = BaseResponse<{
   enabled: boolean
   status: string
   error: string
-  updated_at: number
-  created_at: number
+  ctime: number
+  ctime: number
 }>

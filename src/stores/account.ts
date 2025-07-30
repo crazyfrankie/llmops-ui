@@ -10,7 +10,7 @@ const initAccount = {
   avatar: '',
   last_login_ip: '',
   last_login_at: 0,
-  created_at: 0,
+  ctime: 0,
 }
 
 export const useAccountStore = defineStore('account', () => {

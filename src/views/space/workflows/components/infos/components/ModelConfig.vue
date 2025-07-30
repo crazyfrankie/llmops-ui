@@ -102,7 +102,7 @@ onMounted(() => {
       <a-avatar
         :size="16"
         shape="square"
-        :image-url="`${apiPrefix}/language-models/${form?.provider}/icon`"
+        :image-url="`${apiPrefix}/llms/${form?.provider}/icon`"
       />
       <div class="text-gray-700 text-xs">{{ form?.model }}</div>
       <icon-down />
@@ -127,7 +127,7 @@ onMounted(() => {
                 <a-avatar
                   :size="16"
                   shape="square"
-                  :image-url="`${apiPrefix}/language-models/${data.value.split('/')[0]}/icon`"
+                  :image-url="`${apiPrefix}/llms/${data.value.split('/')[0]}/icon`"
                 />
                 <a-space :size="4">
                   <div class="text-xs text-gray-700">{{ data.value.split('/')[0] }}</div>
@@ -141,7 +141,7 @@ onMounted(() => {
                 <a-avatar
                   :size="16"
                   shape="square"
-                  :image-url="`${apiPrefix}/language-models/${data.value.split('/')[0]}/icon`"
+                  :image-url="`${apiPrefix}/llms/${data.value.split('/')[0]}/icon`"
                 />
                 <div class="text-xs text-gray-700 py-2">{{ data.label }}</div>
               </div>

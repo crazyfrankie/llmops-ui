@@ -187,12 +187,12 @@ onMounted(() => {
           />
           <a-table-column
               title="上传时间"
-              data-index="created_at"
+              data-index="ctime"
               header-cell-class="!bg-gray-200 text-gray-700"
               cell-class="bg-transparent text-gray-700"
           >
             <template #cell="{ record }">
-              {{ moment(record.created_at * 1000).format('YYYY-MM-DD HH:mm:ss') }}
+              {{ moment(record.ctime * 1000).format('YYYY-MM-DD HH:mm:ss') }}
             </template>
           </a-table-column>
           <a-table-column

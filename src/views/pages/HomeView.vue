@@ -104,7 +104,7 @@ const handleSubmit = async () => {
     total_token_count: 0,
     latency: 0,
     agent_thoughts: [],
-    created_at: 0,
+    ctime: 0,
   })
 
   // 5.5 初始化推理过程数据，并清空输入数据
@@ -149,7 +149,7 @@ const handleSubmit = async () => {
             tool: data?.tool,
             tool_input: data?.tool_input,
             latency: data?.latency,
-            created_at: 0,
+            ctime: 0,
           })
         } else {
           // 5.13 存在数据则叠加
@@ -182,7 +182,7 @@ const handleSubmit = async () => {
           tool: data?.tool,
           tool_input: data?.tool_input,
           latency: data?.latency,
-          created_at: 0,
+          ctime: 0,
         })
       }
 

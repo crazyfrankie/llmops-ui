@@ -109,7 +109,7 @@ onMounted(() => {
                 {{ document.hit_count }} 命中
               </a-tag>
               <a-tag size="small" class="rounded h-[18px] leading-[18px] bg-gray-200 text-gray-500">
-                {{ moment(document.updated_at * 1000).format('YYYY-MM-DD HH:mm') }} 最后编辑
+                {{ moment(document.ctime * 1000).format('YYYY-MM-DD HH:mm') }} 最后编辑
               </a-tag>
             </div>
           </div>
